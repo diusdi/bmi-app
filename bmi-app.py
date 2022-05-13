@@ -1,4 +1,8 @@
+import streamlit as st
 #Input untuk mendapatkan variabel
+st.write("""
+# Aplikasi Kalkulator BMI
+""")
 tb= float(input("masukkan tinggi badan anda dalam cm="))
 bb= float(input("masukkan berat badan anda dalam kg="))
 umur=float(input("masukkan umur badan anda dalam tahun="))
