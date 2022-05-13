@@ -7,7 +7,8 @@ st.write("""
 tinggi = st.number_input("Masukkan tinggi badan anda (cm)", 0.0)
 berat = st.number_input("Masukkan berat badan anda (kg)", 0.0)
 umur = st.number_input("Masukkan umur anda ", 0.0)
-JK = st.number_input("Jenis Kelamin [1. laki-laki, 2. perempuan] ", 0.0)
+JK = st.text_input("Jenis Kelamin")
+jenisKelamin = JK.upper()
 hitung = st.button("Hitung")
 
 #Menghitung indeks masa tubuh
@@ -28,13 +29,13 @@ if hitung:
 
 
 #Menghitung persentase lemak tubuh
-    if JK==1: lemak=(1.2*imt)+(0.23*umur)-10.8-5.4
-    if JK==2: lemak=(1.2*imt)+(0.23*umur)-5.4
+    if jenisKelamin=="LAKI-LAKI" or jenisKelamin=="PRIA": lemak=(1.2*imt)+(0.23*umur)-10.8-5.4
+    if jenisKelamin=="PEREMPUAN" or jenisKelamin=="WANITA": lemak=(1.2*imt)+(0.23*umur)-5.4
 
     st.write("Lemak tubuh anda sebesar",lemak, "%")
 
 #Kategori lemak tubuh
-    if JK==1:
+    if jenisKelamin=="LAKI-LAKI" or jenisKelamin=="PRIA":
         kateg_lemak=""
         if lemak<=13 :
             kateg_lemak="atlet"
@@ -44,7 +45,7 @@ if hitung:
                 if 17 < lemak <= 25: kateg_lemak="Berat badan berlebih beresiko obesitas"
                 else: kateg_lemak="Obesitas"
 
-    if JK==2:
+    if jenisKelamin=="PEREMPUAN" or jenisKelamin=="WANITA":
         kateg_lemak=""
         if lemak<=20 :
             kateg_lemak="atlet"
