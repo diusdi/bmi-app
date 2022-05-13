@@ -4,10 +4,10 @@ st.write("""
 # Aplikasi Kalkulator BMI
 """)
 
-tinggi = st.number_input("Masukkan tinggi badan anda (cm)", 0)
-berat = st.number_input("Masukkan berat badan anda (kg)", 0)
-umur = st.number_input("Masukkan umur anda ", 0)
-JK = st.number_input("Jenis Kelamin [1. laki-laki, 2. perempuan] ", 0)
+tinggi = st.number_input("Masukkan tinggi badan anda (cm)", 0.0)
+berat = st.number_input("Masukkan berat badan anda (kg)", 0.0)
+umur = st.number_input("Masukkan umur anda ", 0.0)
+JK = st.number_input("Jenis Kelamin [1. laki-laki, 2. perempuan] ", 0.0)
 
 #Menghitung indeks masa tubuh
 imt=berat/ ((tinggi/100)*(tinggi/100))
